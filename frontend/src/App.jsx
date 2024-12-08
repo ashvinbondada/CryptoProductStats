@@ -66,7 +66,6 @@ function App() {
             <button className="p-2 w-max border-2 rounded-md border-black place-self-center mt-2 bg-green-300 hover:bg-green-500" type="submit">Submit</button>
           </form>
         </div>
-        <h1 className="place-self-center text-5xl">Product Cards</h1>
         <div className="grid grid-cols-4 justify-center">
           {products.length > 0 ? products.map((product) => {
             return <ProductStats key={product.id} props={product} handleDelete={handleDelete} />
