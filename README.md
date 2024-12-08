@@ -50,8 +50,6 @@ This is a small full-stack web application that collects user information throug
    pip install -r requirements.txt
    ```
 
-3. Set up environment variables for the backend (e.g., email settings, API keys).
-
 4. Migrate the database:
    ```bash
    python manage.py migrate
@@ -62,7 +60,7 @@ This is a small full-stack web application that collects user information throug
    python manage.py runserver
    ```
 
-6. Navigate to the frontend directory and install dependencies:
+6. Navigate to the frontend directory from root and install dependencies:
    ```bash
    cd frontend
    npm install
@@ -70,11 +68,11 @@ This is a small full-stack web application that collects user information throug
 
 7. Start the frontend development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ### Usage
-1. Open the app in your browser (usually at `http://localhost:3000`).
+1. Open the app in your browser (usually at `http://localhost:5173/`).
 2. Fill out the interest form with your name, email, and a Coinbase asset.
 3. Submit the form and view the processed data returned by the app.
 
