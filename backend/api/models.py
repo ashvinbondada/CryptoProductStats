@@ -12,6 +12,6 @@ class InterestForm(models.Model):
 class ProductStats(models.Model):
     product = models.CharField(max_length=20)
     volume = models.DecimalField(max_digits=20, decimal_places=8)  # Increase total digits
-    price = models.DecimalField(max_digits=15, decimal_places=2)   # Adjust for monetary values
+    last = models.DecimalField(max_digits=15, decimal_places=2)   # Adjust for monetary values
     high = models.DecimalField(max_digits=15, decimal_places=2)
     low = models.DecimalField(max_digits=15, decimal_places=2)

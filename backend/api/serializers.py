@@ -14,11 +14,10 @@ class InterestFormSerializer(serializers.ModelSerializer):
 class ProductStatsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductStats
-        fields = ["id", "product", "volume", "price", "high", "low"]
+        fields = ["id", "product", "volume", "last", "high", "low"]
         extra_kwargs = {
-            # "product": {"read_only": True},
+            "last": {"read_only": True},
             "volume": {"read_only": True},
-            "price": {"read_only": True},
             "high": {"read_only": True}, 
             "low": {"read_only": True} 
         }
@@ -28,7 +27,7 @@ class ProductStatsSerializer(serializers.ModelSerializer):
         internal_data = super().to_internal_value(data)
         try:
             internal_data['volume'] = Decimal(data.get('volume', '0'))
-            internal_data['price'] = Decimal(data.get('price', '0'))
+            internal_data['last'] = Decimal(data.get('last', '0'))
             internal_data['high'] = Decimal(data.get('high', '0'))
             internal_data['low'] = Decimal(data.get('low', '0'))
         except ValueError as e:
